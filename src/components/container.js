@@ -8,19 +8,27 @@ export default class Container extends React.Component {
             {
                 title: "Jaws",
                 synopsis: "A giant shark stalks some fishermen",
-                review: [
-                    "It was good",
-                    "Really Bad"
-                ],
-
-                stars: 5
+                review: [ {
+                    review: 'It was good',
+                    stars: '5 Stars'
+                },
+                
+                {
+                    review: 'It was bad',
+                    stars: '1 Star'
+                }
+                        ]
             },
 
             {
                 title: "Batman",
                 synopsis: "An orphan goes on a psychotic trip believing he is a superhero",
-                review: "Another test",
-                stars: 4
+                review: [
+                    {
+                        review: "This better fix it",
+                        stars: "2 Stars"
+                    }
+                ]
             }
         ];
 

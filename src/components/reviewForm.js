@@ -1,12 +1,12 @@
 import React from 'react';
-import Review from './review';
 import Stars from './stars';
 
 export default class ReviewForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            review: ''
+            reviewState: '',
+            stars: ''
         }
         this.submitReview = this.submitReview.bind(this);
         this.updateReview = this.updateReview.bind(this);
@@ -14,11 +14,12 @@ export default class ReviewForm extends React.Component {
     }
 
     submitReview() {
-        return <Review {...{review: this.state.review, stars: '5 Stars'}} />
+        let reviewObj = {review: this.state.reviewState, stars: this.state.stars};
+        this.props.createReview(reviewObj);
     }
 
     updateReview(event) {
-        this.setState({review: event.target.value});
+        this.setState({reviewState: event.target.value});
     }
 
     updateStars(star) {
@@ -28,14 +29,14 @@ export default class ReviewForm extends React.Component {
     render() {
         return(
             <div className="container-fluid">
-                <form id="reviewForm">
+                <form name="reviewForm">
                     <div className="row">
                         <div className="col-6 mb-3 mx-auto">
                             <label for="review" className="form-label">Leave a Review for {this.props.title}</label>
-                            <textarea className="form-control" id="review" rows="6" value={this.state.review} onChange={this.updateReview}></textarea>
+                            <textarea className="form-control" name="review" rows="6" onChange={this.updateReview}></textarea>
                         </div>
                     </div>
-                    <Stars {...{title: this.props.title}} />
+                    <Stars updateStars = {this.updateStars} {...{title: this.props.title}} />
                     <div className="row">
                         <div className="col-6 mt-4 mb-3 mx-auto">
                             <button type="submit" className="btn btn-primary" onClick={this.submitReview}>Submit</button>
