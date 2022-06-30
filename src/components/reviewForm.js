@@ -42,6 +42,6 @@ export default class ReviewForm extends React.Component {
                     </div>
                 </div>
         </div>
-        )
+        );
     }
 }
