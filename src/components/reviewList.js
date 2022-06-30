@@ -15,7 +15,6 @@ export default class ReviewList extends React.Component {
         let tempReview = this.state.reviews;
         tempReview.push(review);
         this.setState({reviews: tempReview});
-        this.props.postReview(this.state.reviews);
     }
 
     render() {

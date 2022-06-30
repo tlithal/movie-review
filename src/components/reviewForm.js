@@ -13,7 +13,7 @@ export default class ReviewForm extends React.Component {
         this.updateStars = this.updateStars.bind(this);
     }
 
-    submitReview() {
+    submitReview(e) {
         let reviewObj = {review: this.state.reviewState, stars: this.state.stars};
         this.props.createReview(reviewObj);
     }
@@ -29,21 +29,19 @@ export default class ReviewForm extends React.Component {
     render() {
         return(
             <div className="container-fluid">
-                <form name="reviewForm">
-                    <div className="row">
-                        <div className="col-6 mb-3 mx-auto">
-                            <label for="review" className="form-label">Leave a Review for {this.props.title}</label>
-                            <textarea className="form-control" name="review" rows="6" onChange={this.updateReview}></textarea>
-                        </div>
+                <div className="row">
+                    <div className="col-6 mb-3 mx-auto">
+                        <label for="review" className="form-label">Leave a Review for {this.props.title}</label>
+                        <textarea className="form-control" name="review" rows="6" onChange={this.updateReview}></textarea>
                     </div>
-                    <Stars updateStars = {this.updateStars} {...{title: this.props.title}} />
-                    <div className="row">
-                        <div className="col-6 mt-4 mb-3 mx-auto">
-                            <button type="submit" className="btn btn-primary" onClick={this.submitReview}>Submit</button>
-                        </div>
+                </div>
+                <Stars updateStars = {this.updateStars} {...{title: this.props.title}} />
+                <div className="row">
+                    <div className="col-6 mt-4 mb-3 mx-auto">
+                        <button className="btn btn-primary" onClick={this.submitReview}>Submit</button>
                     </div>
-                </form>
-            </div>
+                </div>
+        </div>
         )
     }
 }

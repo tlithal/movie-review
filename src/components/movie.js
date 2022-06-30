@@ -10,20 +10,11 @@ export default class Movie extends React.Component {
             synopsis: this.props.synopsis,
             id: this.props.id
         }
-        this.postReview = this.postReview.bind(this);
-    }
-
-
-    postReview(review) {
-        let tempReviews = this.state.reviews;
-        tempReviews = review;
-        this.setState({reviews: tempReviews});
-        this.props.updateReviews(this.state.reviews);
     }
 
     render() {       
         return(
-            <div className="card w-75 mx-auto">
+            <div className="card w-75 mt-5 mb-5 mx-auto">
                 <div className="card-header bg-success text-white">
                     <h2>{this.state.title}</h2>
                 </div>

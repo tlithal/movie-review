@@ -28,28 +28,20 @@ export default class MovieList extends React.Component {
                     synopsis: "An orphan goes on a psychotic trip believing he is a superhero",
                     review: [
                         {
-                            review: "This better fix it",
+                            review: "Dark Movie",
                             stars: "2 Stars"
                         }
                     ]
                 }
             ]
         }
-        this.updateReviews = this.updateReviews.bind(this);
     }
-
-    updateReviews(review) {
-        let tempReview = this.state.review;
-        tempReview = review;
-        this.setState({review: tempReview});
-    }
-
 
     render() {
 
         let movies;
         if(this.state.movies) {
-            movies = this.state.movies.map((movie, index) => <Movie key={index} updateReviews = {this.updateReviews} {...movie} />);
+            movies = this.state.movies.map((movie, index) => <Movie key={index} {...movie} />);
         }
 
         return(
