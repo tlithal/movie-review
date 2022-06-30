@@ -13,7 +13,7 @@ export default class ReviewForm extends React.Component {
         this.updateStars = this.updateStars.bind(this);
     }
 
-    submitReview(e) {
+    submitReview() {
         let reviewObj = {review: this.state.reviewState, stars: this.state.stars};
         this.props.createReview(reviewObj);
     }
