@@ -11,9 +11,9 @@ export default class Review extends React.Component {
 
     render() {
         return(
-            <div className="card w-75 mx-auto mt-4 mb-3">
-                <div className="card-body">
-                    <h4>{this.state.review}</h4>
+            <div className="card w-75 mx-auto mt-4 mb-3 border-dark">
+                <div className="card-body bg-success text-white">
+                    <h4><em>{this.state.review}</em></h4>
                 </div>
                 <div className="card-footer">
                     <h5>{this.state.stars}</h5>

@@ -9,29 +9,17 @@ export default class MovieList extends React.Component {
                 {
                     id: 0,
                     title: "Jaws",
+                    image: "/images/Jaws.jpg",
                     synopsis: "A giant shark stalks some fishermen",
-                    review: [ {
-                        review: 'It was good',
-                        stars: '5 Stars'
-                    },
-                    
-                    {
-                        review: 'It was bad',
-                        stars: '1 Star'
-                    }
-                            ]
+                    review: []
                 },
     
                 {
                     id: 1,
                     title: "Batman",
+                    image: "/images/Batman.jpg",
                     synopsis: "An orphan goes on a psychotic trip believing he is a superhero",
-                    review: [
-                        {
-                            review: "Dark Movie",
-                            stars: "2 Stars"
-                        }
-                    ]
+                    review: []
                 }
             ]
         }
